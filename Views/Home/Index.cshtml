@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - VulnLab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Stili di base */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0d0d0d;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0 0 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+        .description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .login-link {
+            font-size: 1.2rem;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .login-link:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #1a1a1a;
+            color: #bbb;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <h1>Welcome to VulnLab</h1>
+        <p>This is a demo of a vulnerable application, used for learning purposes.</p>
+        <div class="description">
+            <p>VulnLab is an educational example of a common vulnerability in web applications: SQL Injection. This site is designed to help you understand how vulnerabilities can be exploited if proper security measures are not implemented.</p> 
+            <p>On this site, you can log in with a username and password, but authentication is vulnerable to SQL Injection—so be careful!</p>
+        </div>
+        <a href="/Login" class="login-link">Login</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 VulnLab. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
