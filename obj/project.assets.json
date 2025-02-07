@@ -3308,11 +3308,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\raffy\\Desktop\\VulnLab\\MyVulnerableApp.csproj",
+      "projectUniqueName": "C:\\Users\\raffy\\Documents\\GitHub\\VulnLab\\MyVulnerableApp.csproj",
       "projectName": "MyVulnerableApp",
-      "projectPath": "C:\\Users\\raffy\\Desktop\\VulnLab\\MyVulnerableApp.csproj",
+      "projectPath": "C:\\Users\\raffy\\Documents\\GitHub\\VulnLab\\MyVulnerableApp.csproj",
       "packagesPath": "C:\\Users\\raffy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\raffy\\Desktop\\VulnLab\\obj\\",
+      "outputPath": "C:\\Users\\raffy\\Documents\\GitHub\\VulnLab\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\raffy\\AppData\\Roaming\\NuGet\\NuGet.Config"

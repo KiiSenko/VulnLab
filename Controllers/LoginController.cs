@@ -22,43 +22,41 @@ namespace MyVulnerableApp.Controllers
         }
 
         [HttpPost]
-
-[HttpPost]
-public IActionResult Authenticate(string username, string password, bool isInjectionProtectionEnabled)
-{
-    // Ad esempio, usa Debug.WriteLine o Console.WriteLine (se vedi i log nel debugger)
-    Console.WriteLine($"SQL Injection Protection is enabled: {isInjectionProtectionEnabled}");
-
-    if (isInjectionProtectionEnabled)
-    {
-        // Query sicura
-        var query = "SELECT * FROM Users WHERE Username = @username AND Password = @password";
-        var user = _context.Users
-            .FromSqlRaw(query, 
-                new SqliteParameter("@username", username), 
-                new SqliteParameter("@password", password))
-            .FirstOrDefault();
-
-        if (user != null)
+        public IActionResult Authenticate(string username, string password, bool isInjectionProtectionEnabled)
         {
-            return RedirectToAction("Index", "Home");
-        }
-    }
-    else
-    {
-        // Query vulnerabile
-        var query = $"SELECT * FROM Users WHERE Username = '{username}' AND Password = '{password}'";
-        var user = _context.Users.FromSqlRaw(query).FirstOrDefault();
+                // Ad esempio, usa Debug.WriteLine o Console.WriteLine (se vedi i log nel debugger)
+                Console.WriteLine($"SQL Injection Protection is enabled: {isInjectionProtectionEnabled}");
 
-        if (user != null)
-        {
-            return RedirectToAction("Index", "Home");
-        }
-    }
+                if (isInjectionProtectionEnabled)
+                {
+                    // Query sicura
+                    var query = "SELECT * FROM Users WHERE Username = @username AND Password = @password";
+                    var user = _context.Users
+                    .FromSqlRaw(query, 
+                    new SqliteParameter("@username", username), 
+                    new SqliteParameter("@password", password))
+                    .FirstOrDefault();
 
-    ViewBag.Message = "Invalid username or password.";
-    return View("Index");
-}
+                if (user != null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            else
+            {
+                // Query vulnerabile
+                var query = $"SELECT * FROM Users WHERE Username = '{username}' AND Password = '{password}'";
+                var user = _context.Users.FromSqlRaw(query).FirstOrDefault();
+
+                if (user != null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
+            ViewBag.Message = "Invalid username or password.";
+            return View("Index");
+        }   
 
     }
 }
